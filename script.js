@@ -9,6 +9,14 @@ mobileMenuBtn.addEventListener('click', () => {
         : '<i class="fas fa-bars"></i>';
 });
 
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -19,11 +27,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         const targetElement = document.querySelector(targetId);
         if(targetElement) {
-            // Close mobile menu if open
-            navLinks.classList.remove('active');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            
-            // Scroll to target
             window.scrollTo({
                 top: targetElement.offsetTop - 80,
                 behavior: 'smooth'
@@ -47,187 +50,197 @@ window.addEventListener('scroll', () => {
     lastScrollY = scrollY;
 });
 
-// Initialize 3D background when page loads
-window.addEventListener('load', () => {
-    // This will be called from three-scene.js
-});
-
-// Certificate Carousel Functionality
-class CertificateCarousel {
-    constructor() {
-        this.slides = document.querySelectorAll('.cert-slide');
-        this.dots = document.querySelectorAll('.dot');
-        this.prevBtn = document.querySelector('.prev-btn');
-        this.nextBtn = document.querySelector('.next-btn');
-        this.currentIndex = 0;
-        this.totalSlides = this.slides.length;
-        this.autoSlideInterval = null;
-        
-        this.init();
-    }
-    
-    init() {
-        // Set up event listeners
-        this.prevBtn.addEventListener('click', () => this.prevSlide());
-        this.nextBtn.addEventListener('click', () => this.nextSlide());
-        
-        // Add click events to dots
-        this.dots.forEach(dot => {
-            dot.addEventListener('click', (e) => {
-                const slideIndex = parseInt(e.target.dataset.slide);
-                this.goToSlide(slideIndex);
-            });
+// Scroll Indicator Functionality
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
         });
-        
-        // Add click event to certificate images for modal
-        document.querySelectorAll('.cert-image').forEach((image, index) => {
-            image.addEventListener('click', () => {
-                this.openCertificateModal(index);
-            });
-        });
-        
-        // Start auto-slide
-        this.startAutoSlide();
-        
-        // Pause auto-slide on hover
-        const carousel = document.querySelector('.cert-carousel');
-        carousel.addEventListener('mouseenter', () => this.stopAutoSlide());
-        carousel.addEventListener('mouseleave', () => this.startAutoSlide());
-    }
-    
-    updateCarousel() {
-        // Remove active classes
-        this.slides.forEach(slide => {
-            slide.classList.remove('active', 'prev', 'next');
-        });
-        
-        this.dots.forEach(dot => {
-            dot.classList.remove('active');
-        });
-        
-        // Add active classes
-        this.slides[this.currentIndex].classList.add('active');
-        this.dots[this.currentIndex].classList.add('active');
-        
-        // Update prev/next classes for animation
-        const prevIndex = this.currentIndex === 0 ? this.totalSlides - 1 : this.currentIndex - 1;
-        const nextIndex = this.currentIndex === this.totalSlides - 1 ? 0 : this.currentIndex + 1;
-        
-        this.slides[prevIndex].classList.add('prev');
-        this.slides[nextIndex].classList.add('next');
-        
-        // Update button states
-        this.updateButtonStates();
-    }
-    
-    updateButtonStates() {
-        // Can add disabled states if needed
-    }
-    
-    nextSlide() {
-        this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
-        this.updateCarousel();
-        this.resetAutoSlide();
-    }
-    
-    prevSlide() {
-        this.currentIndex = this.currentIndex === 0 ? this.totalSlides - 1 : this.currentIndex - 1;
-        this.updateCarousel();
-        this.resetAutoSlide();
-    }
-    
-    goToSlide(index) {
-        this.currentIndex = index;
-        this.updateCarousel();
-        this.resetAutoSlide();
-    }
-    
-    startAutoSlide() {
-        this.autoSlideInterval = setInterval(() => {
-            this.nextSlide();
-        }, 5000); // Change slide every 5 seconds
-    }
-    
-    stopAutoSlide() {
-        if (this.autoSlideInterval) {
-            clearInterval(this.autoSlideInterval);
-            this.autoSlideInterval = null;
-        }
-    }
-    
-    resetAutoSlide() {
-        this.stopAutoSlide();
-        this.startAutoSlide();
-    }
-    
-    openCertificateModal(index) {
-        const certificateData = {
-            0: {
-                title: "Deloitte Data Analytics Virtual Internship",
-                description: "Completed virtual internship simulating real-world Deloitte data analytics projects. Focus on data cleaning, visualization, and business insights. Gained practical experience in corporate analytics workflows and professional reporting standards.",
-                image: "certificates/deloitte-certificate.jpg"
-            },
-            1: {
-                title: "Ethical Hacking Certificate",
-                description: "Completed comprehensive course on ethical hacking fundamentals, vulnerability assessment, and secure system design principles. Covered topics including network security, penetration testing basics, cryptography, and secure coding practices.",
-                image: "certificates/ethical-hacking.jpg"
-            },
-            2: {
-                title: "Web Development Certificate",
-                description: "Mastered full-stack web development concepts including HTML5, CSS3, JavaScript, responsive design, and backend integration techniques. Built multiple projects including e-commerce prototypes and interactive web applications.",
-                image: "certificates/web-development.jpg"
-            },
-            3: {
-                title: "Generative AI Certificate",
-                description: "Explored generative AI models, their applications, and implementation strategies for creative and practical solutions. Learned about AI ethics, model training, and deployment of AI-powered applications.",
-                image: "certificates/generative-ai.jpg"
-            }
-        };
-        
-        const cert = certificateData[index];
-        if (cert) {
-            const modalImage = document.getElementById('modalImage');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalDescription = document.getElementById('modalDescription');
-            
-            modalImage.src = cert.image;
-            modalImage.alt = cert.title;
-            modalTitle.textContent = cert.title;
-            modalDescription.textContent = cert.description;
-            
-            const modal = document.getElementById('certificateModal');
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-    }
+    });
 }
 
-// Initialize carousel when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new CertificateCarousel();
+// Typewriter Effect
+const typewriterElement = document.getElementById('typewriter');
+if (typewriterElement) {
+    const phrases = [
+        "Building the future with code and creativity...",
+        "IoT + AI enthusiast...",
+        "Data visualization expert...",
+        "Full-stack developer...",
+        "Cybersecurity learner..."
+    ];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isEnd = false;
+    
+    function typeWriter() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+            // Deleting chars
+            typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            // Writing chars
+            typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+        }
+        
+        // Initial typing speed
+        let typeSpeed = 100;
+        
+        if (isDeleting) {
+            typeSpeed = typeSpeed / 2;
+        }
+        
+        // If word is complete
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isEnd = true;
+            typeSpeed = 1500; // Pause at end
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex++;
+            if (phraseIndex === phrases.length) {
+                phraseIndex = 0;
+            }
+        }
+        
+        setTimeout(typeWriter, typeSpeed);
+    }
+    
+    // Start typewriter effect
+    setTimeout(typeWriter, 1000);
+}
+
+// Certificate Modal Functionality
+const certificateModal = document.getElementById('certificateModal');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const closeModal = document.querySelector('.close-modal');
+
+// Open modal when certificate is clicked
+document.querySelectorAll('.view-cert-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const certSrc = this.getAttribute('data-src');
+        const certTitle = this.getAttribute('data-title');
+        
+        if (certSrc && certTitle) {
+            modalImage.src = certSrc;
+            modalImage.alt = certTitle;
+            modalTitle.textContent = certTitle;
+            
+            certificateModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
 });
 
-// Modal close functionality
-const closeModal = document.querySelector('.close-modal');
-const modal = document.getElementById('certificateModal');
+// Also allow clicking on the certificate image to open modal
+document.querySelectorAll('.certificate-image').forEach(image => {
+    image.addEventListener('click', function() {
+        const button = this.querySelector('.view-cert-btn');
+        if (button) {
+            button.click();
+        }
+    });
+});
 
+// Close modal
 closeModal.addEventListener('click', () => {
-    modal.classList.remove('active');
+    certificateModal.classList.remove('active');
     document.body.style.overflow = 'auto';
 });
 
 // Close modal when clicking outside
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.remove('active');
+certificateModal.addEventListener('click', (e) => {
+    if (e.target === certificateModal) {
+        certificateModal.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
 });
 
 // Close modal with Escape key
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-        modal.classList.remove('active');
+    if (e.key === 'Escape' && certificateModal.classList.contains('active')) {
+        certificateModal.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
+});
+
+// Contact Form Submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Basic validation
+        if (!name || !email || !subject || !message) {
+            alert('Please fill in all fields.');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        
+        // In a real application, you would send this data to a server
+        // For now, we'll just show a success message
+        alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+        
+        // Reset form
+        contactForm.reset();
+    });
+}
+
+// Project Demo Links - Add functionality
+document.querySelectorAll('.project-link.demo-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') {
+            e.preventDefault();
+            const projectTitle = this.closest('.project-card').querySelector('.project-title').textContent;
+            alert(`Demo for "${projectTitle}" - This would open the live demo in a real implementation.\n\nFor now, you can check the GitHub repository for code.`);
+        }
+    });
+});
+
+// Initialize 3D background when page loads
+window.addEventListener('load', () => {
+    // This will be called from three-scene.js
+    console.log('Portfolio loaded successfully!');
+});
+
+// Add active state to navigation on scroll
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
 });

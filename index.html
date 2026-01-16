@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rutvi Kanabar</title>
+    <title>Rutvi Kanabar - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -28,6 +28,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact" id="contactNav">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,40 +38,97 @@
     <main class="container">
         <!-- Hero Section -->
         <section class="hero" id="home">
-            <h1>Rutvi Kanabar</h1>
-            <h2>Computer Engineering Student | Developer | Data Analyst</h2>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>rutvikanabar6@gmail.com</span>
+            <div class="hero-content-wrapper">
+                <!-- Left Column: Photo -->
+                <div class="hero-left">
+                    <div class="profile-image-container">
+                        <div class="profile-border">
+                            <div class="profile-image">
+                                <img src="assets/photo.jpeg" alt="Rutvi Kanabar" class="profile-pic">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+91 8692960706</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Mumbai, India</span>
+                
+                <!-- Right Column: Text Content -->
+                <div class="hero-right">
+                    <div class="hero-text-content">
+                        <h1 class="hero-title">Rutvi Kanabar</h1>
+                        <h2 class="hero-subtitle">Computer Engineering Student | Developer | Data Analyst</h2>
+                        
+                        <div class="typewriter" id="typewriter">
+                            Building the future with code and creativity...
+                        </div>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Skills</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">8</span>
+                                <span class="stat-label">Certifications</span>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">
+                                <i class="fas fa-code"></i> View Projects
+                            </a>
+                            <a href="#contact" class="btn btn-secondary">
+                                <i class="fas fa-envelope"></i> Contact Me
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/rutvi-kanabar/" class="social-link" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/Kanabar-rutvi" class="social-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="fas fa-briefcase"></i>
-                </a>
+            <!-- Contact & Social -->
+            <div class="hero-bottom">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>rutvikanabar6@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8692960706</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Mumbai, India</span>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/rutvi-kanabar/" class="social-link" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Kanabar-rutvi" class="social-link" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Portfolio">
+                        <i class="fas fa-briefcase"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Resume">
+                        <i class="fas fa-file-alt"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </section>
         
         <!-- Summary Section -->
         <section class="summary" id="summary">
-            <h2 class="section-title">Summary</h2>
+            <h2 class="section-title">Professional Summary</h2>
             <p>Motivated and technically skilled Computer Engineering student with strong hands-on experience in software development, data analytics, IoT-based systems, AI-enabled applications, and cybersecurity fundamentals. Proven ability to design and implement real-world solutions including Smart Safety Helmet (IoT + AI), Library Management Systems, and interactive data dashboards. Passionate about ethical hacking, secure system design, and vulnerability analysis, along with building scalable, industry-level projects and continuously upgrading technical expertise.</p>
         </section>
         
@@ -129,7 +187,25 @@
                         </div>
                     </div>
                     <div class="project-desc">
-                        Designed an industry-level safety solution for construction and industrial workers. Integrated sensors such as gas sensor, temperature sensor, pulse sensor, and motion detection. Implemented real-time alerts for unsafe conditions and health abnormalities. Focused on worker safety, attendance monitoring, and accident prevention.
+                        Designed an industry-level safety solution for construction and industrial workers. Integrated sensors such as gas sensor, temperature sensor, pulse sensor, and motion detection. Implemented real-time alerts for unsafe conditions and health abnormalities.
+                    </div>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Real-time health monitoring</li>
+                            <li>Gas and temperature detection</li>
+                            <li>Fall detection with alerts</li>
+                            <li>GPS tracking and location services</li>
+                            <li>Cloud data storage and analytics</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Kanabar-rutvi" class="project-link github-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="#" class="project-link demo-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
                     </div>
                 </div>
                 
@@ -145,7 +221,25 @@
                         </div>
                     </div>
                     <div class="project-desc">
-                        Developed a client-server based Library Management System using TCP protocol. Implemented modules: Login, Registration, Dashboard, Add Book, Borrow, Return, View Books. Used MySQL for authentication and data storage. Designed modern UI with dark mode, gradients, and responsive layouts.
+                        Developed a client-server based Library Management System using TCP protocol. Implemented modules: Login, Registration, Dashboard, Add Book, Borrow, Return, View Books. Used MySQL for authentication and data storage.
+                    </div>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Secure user authentication</li>
+                            <li>Book borrowing and return system</li>
+                            <li>Real-time inventory management</li>
+                            <li>Dark mode UI with modern design</li>
+                            <li>Automated fine calculation</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Kanabar-rutvi" class="project-link github-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="#" class="project-link demo-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
                     </div>
                 </div>
                 
@@ -163,6 +257,24 @@
                     <div class="project-desc">
                         Built a web-based system that recommends courses based on user preferences. Implemented user authentication, bookmarking, and search features. Styled frontend using Bootstrap 5 with modern UI elements.
                     </div>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Personalized course recommendations</li>
+                            <li>User rating and review system</li>
+                            <li>Bookmark favorite courses</li>
+                            <li>Advanced search with filters</li>
+                            <li>Responsive mobile-friendly design</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Kanabar-rutvi" class="project-link github-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="#" class="project-link demo-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
                 </div>
                 
                 <!-- Project 4 -->
@@ -178,6 +290,24 @@
                     </div>
                     <div class="project-desc">
                         Designed dashboards with KPIs, cards, slicers, maps, and charts. Analyzed datasets to generate actionable insights. Created Home, About, and Dashboard pages for structured storytelling.
+                    </div>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Interactive charts and graphs</li>
+                            <li>Real-time data updates</li>
+                            <li>Customizable KPI metrics</li>
+                            <li>Data filtering and slicing</li>
+                            <li>Export to PDF/Excel functionality</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Kanabar-rutvi" class="project-link github-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="#" class="project-link demo-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
                     </div>
                 </div>
                 
@@ -195,6 +325,24 @@
                     <div class="project-desc">
                         Developed backend using Flask + MySQL. Implemented event creation, registration, and management workflows. Designed frontend using HTML, CSS, JavaScript.
                     </div>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Event creation and scheduling</li>
+                            <li>Online registration system</li>
+                            <li>Automated email notifications</li>
+                            <li>Participant management dashboard</li>
+                            <li>Attendance tracking and reporting</li>
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Kanabar-rutvi" class="project-link github-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="#" class="project-link demo-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -204,51 +352,55 @@
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h4>Programming Languages</h4>
+                    <h4><i class="fas fa-code"></i> Programming Languages</h4>
                     <ul class="skill-list">
                         <li>Python</li>
                         <li>Java</li>
                         <li>C</li>
                         <li>SQL</li>
+                        <li>JavaScript</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h4>Data & Analytics</h4>
+                    <h4><i class="fas fa-chart-line"></i> Data & Analytics</h4>
                     <ul class="skill-list">
                         <li>Power BI</li>
                         <li>Tableau</li>
                         <li>Excel</li>
                         <li>Python (Pandas, NumPy)</li>
+                        <li>Data Visualization</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h4>Web Development</h4>
+                    <h4><i class="fas fa-laptop-code"></i> Web Development</h4>
                     <ul class="skill-list">
                         <li>HTML, CSS, JavaScript</li>
                         <li>Bootstrap</li>
                         <li>Django</li>
                         <li>REST APIs</li>
+                        <li>Flask</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h4>Tools & Security</h4>
+                    <h4><i class="fas fa-tools"></i> Tools & Technologies</h4>
                     <ul class="skill-list">
                         <li>VS Code, NetBeans</li>
                         <li>Git/GitHub</li>
                         <li>JWT Authentication</li>
                         <li>Agile/Scrum</li>
                         <li>Arduino IDE</li>
+                        <li>MySQL</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <h4>Soft Skills</h4>
+                    <h4><i class="fas fa-users"></i> Soft Skills</h4>
                     <ul class="skill-list">
                         <li>Structured Problem Solving</li>
-                        <li>Teamwork</li>
+                        <li>Team Leadership</li>
                         <li>Clear Communication</li>
                         <li>Adaptability</li>
                         <li>Time Management</li>
@@ -258,135 +410,198 @@
         </section>
         
         <!-- Certifications Section -->
-<section id="certifications">
-    <h2 class="section-title">Certifications</h2>
-    
-    <div class="certifications-gallery">
-        <!-- Certificate 1 -->
-        <div class="certificate-card">
-            <div class="certificate-image">
-                <img src="assets/flutter_certi.png" alt="Flutter Certificate" loading="lazy">
-                <div class="certificate-overlay">
-                    <div class="overlay-content">
-                        <h4>Flutter Certificate</h4>
-                        <button class="view-cert-btn" data-cert="deloitte">View Certificate</button>
+        <section id="certifications">
+            <h2 class="section-title">Certifications</h2>
+            
+            <div class="certifications-gallery">
+                
+                <!-- Certificate 2 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/ethical_hacking_certificate.png" alt="Ethical Hacking Certificate" loading="lazy">
+                        <div class="certificate-overlay">
+                            <div class="overlay-content">
+                                <h4>Ethical Hacking</h4>
+                                <button class="view-cert-btn" data-src="assets/ethical_hacking_certificate.png" data-title="Ethical Hacking Certificate">View Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificate 3 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/web_dev_certificate.png" alt="Web Development Certificate" loading="lazy">
+                        <div class="certificate-overlay">
+                            <div class="overlay-content">
+                                <h4>Web Development</h4>
+                                <button class="view-cert-btn" data-src="assets/web_dev_certificate.png" data-title="Web Development Certificate">View Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificate 4 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/gen_ai_certi.png" alt="Generative AI Certificate" loading="lazy">
+                        <div class="certificate-overlay">
+                            <div class="overlay-content">
+                                <h4>Generative AI</h4>
+                                <button class="view-cert-btn" data-src="assets/gen_ai_certi.png" data-title="Generative AI Certificate">View Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/c_certi.png" alt="C Language Certificate" loading="lazy">
+                        <div class="certificate-overlay">
+                            <div class="overlay-content">
+                                <h4>C Programming</h4>
+                                <button class="view-cert-btn" data-src="assets/c_certi.png" data-title="C Programming Certificate">View Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 6 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/java_certi.png" alt="Java Certificate" loading="lazy">
+                        <div class="certificate-overlay">
+                            <div class="overlay-content">
+                                <h4>Java Programming</h4>
+                                <button class="view-cert-btn" data-src="assets/java_certi.png" data-title="Java Programming Certificate">View Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 7 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/python_certi.png" alt="Python Certificate" loading="lazy">
+                        <div class="certificate-overlay">
+                            <div class="overlay-content">
+                                <h4>Python Programming</h4>
+                                <button class="view-cert-btn" data-src="assets/python_certi.png" data-title="Python Programming Certificate">View Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 1 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/flutter_certi.png" alt="Flutter Certificate" loading="lazy">
+                        <div class="certificate-overlay">
+                            <div class="overlay-content">
+                                <h4>Flutter Development</h4>
+                                <button class="view-cert-btn" data-src="assets/flutter_certi.png" data-title="Flutter Development Certificate">View Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 8 -->
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="assets/django_certi.png" alt="Django Certificate" loading="lazy">
+                        <div class="certificate-overlay">
+                            <div class="overlay-content">
+                                <h4>Django Framework</h4>
+                                <button class="view-cert-btn" data-src="assets/django_certi.png" data-title="Django Framework Certificate">View Certificate</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            
+            
+            <!-- Certificate Modal -->
+            <div class="certificate-modal" id="certificateModal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="modal-body">
+                        <img src="" alt="Certificate Full View" id="modalImage">
+                        <div class="modal-info">
+                            <h3 id="modalTitle"></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <!-- Certificate 2 -->
-        <div class="certificate-card">
-            <div class="certificate-image">
-                <img src="assets/ethical_hacking_certificate.png" alt="Ethical Hacking Certificate" loading="lazy">
-                <div class="certificate-overlay">
-                    <div class="overlay-content">
-                        <h4>Ethical Hacking</h4>
-                        <button class="view-cert-btn" data-cert="hacking">View Certificate</button>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info-card">
+                    <h3><i class="fas fa-paper-plane"></i> Get In Touch</h3>
+                    <p>I'm currently available for internship opportunities and collaborative projects. Feel free to reach out!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>rutvikanabar6@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 8692960706</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Mumbai, India</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Certificate 3 -->
-        <div class="certificate-card">
-            <div class="certificate-image">
-                <img src="assets/web_dev_certificate.png" alt="Web Development Certificate" loading="lazy">
-                <div class="certificate-overlay">
-                    <div class="overlay-content">
-                        <h4>Web Development</h4>
-                        <button class="view-cert-btn" data-cert="webdev">View Certificate</button>
-                    </div>
+                
+                <div class="contact-form">
+                    <h3><i class="fas fa-comment-dots"></i> Send Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
-        </div>
-        
-        <!-- Certificate 4 -->
-        <div class="certificate-card">
-            <div class="certificate-image">
-                <img src="assets/gen_ai_certi.png" alt="Generative AI Certificate" loading="lazy">
-                <div class="certificate-overlay">
-                    <div class="overlay-content">
-                        <h4>Generative AI</h4>
-                        <button class="view-cert-btn" data-cert="ai">View Certificate</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Certificate 5 -->
-        <div class="certificate-card">
-            <div class="certificate-image">
-                <img src="assets/c_certi.png" alt="C Certificate" loading="lazy">
-                <div class="certificate-overlay">
-                    <div class="overlay-content">
-                        <h4>C Language</h4>
-                        <button class="view-cert-btn" data-cert="ai">View Certificate</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Certificate 6 -->
-        <div class="certificate-card">
-            <div class="certificate-image">
-                <img src="assets/java_certi.png" alt="Java Certificate" loading="lazy">
-                <div class="certificate-overlay">
-                    <div class="overlay-content">
-                        <h4>Java Language</h4>
-                        <button class="view-cert-btn" data-cert="ai">View Certificate</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Certificate 7 -->
-        <div class="certificate-card">
-            <div class="certificate-image">
-                <img src="assets/python_certi.png" alt="Python Certificate" loading="lazy">
-                <div class="certificate-overlay">
-                    <div class="overlay-content">
-                        <h4>Python Language</h4>
-                        <button class="view-cert-btn" data-cert="ai">View Certificate</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Certificate 8 -->
-        <div class="certificate-card">
-            <div class="certificate-image">
-                <img src="assets/django_certi.png" alt="Django Certificate" loading="lazy">
-                <div class="certificate-overlay">
-                    <div class="overlay-content">
-                        <h4>Django Framework</h4>
-                        <button class="view-cert-btn" data-cert="ai">View Certificate</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Certificate Modal -->
-    <div class="certificate-modal" id="certificateModal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-body">
-                <img src="" alt="Certificate Full View" id="modalImage">
-                <div class="modal-info">
-                    <h3 id="modalTitle"></h3>
-                    <p id="modalDescription"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
     </main>
     
     <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Rutvi Kanabar. All Rights Reserved.</p>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/rutvi-kanabar/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Kanabar-rutvi" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
